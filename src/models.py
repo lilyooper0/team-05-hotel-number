@@ -20,4 +20,3 @@ class Booking:
     check_out: date         # ГГГГ-ММ-ДД, день выезда НЕ включён
     status: str             # STATUS_ACTIVE или STATUS_CANCELLED
     price_per_night: Decimal  # цена на момент оформления
-
