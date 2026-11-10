@@ -38,3 +38,4 @@ def cancel_booking(storage, booking_id):
     storage.update(b)
     log_action("cancel", booking_id, "ok")  #пишем в лог что отмена прошла успешно
     return Result(True, "Отменена.")
+
