@@ -1,8 +1,8 @@
-# общий модуль, словарь
 from datetime import date
 
 class Booking:
     def __init__(self, id, guest, room_id, check_in, check_out, status, price):
+        #сохраняем данные в объект
         self.id = id
         self.guest = guest
         self.room_id = room_id
@@ -12,13 +12,19 @@ class Booking:
         self.price = price
 
     def to_row(self):
+        #готовим данные для сохранения. даты строками, цену с двумя знаками после запятой
         return {
-            "id": self.id, "guest": self.guest, "room_id": self.room_id,
-            "check_in": self.check_in.isoformat(), "check_out": self.check_out.isoformat(),
-            "status": self.status, "price": f"{self.price:.2f}",
+            "id": self.id,
+            "guest": self.guest,
+            "room_id": self.room_id,
+            "check_in": self.check_in.isoformat(),
+            "check_out": self.check_out.isoformat(),
+            "status": self.status,
+            "price": f"{self.price:.2f}",
         }
 
     def from_row(self, r):
+        #заполняем объект данными из словаря даты превращаем обратно в даты цену в число
         self.id = r["id"]
         self.guest = r["guest"]
         self.room_id = r["room_id"]
